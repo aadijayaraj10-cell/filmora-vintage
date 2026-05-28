@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filmora</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Film grain SVG filter (invisible, used by CSS) -->
+  <svg style="display:none">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </svg>
+
+  <!-- Grain overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <span class="logo-f">F</span>ILMORA
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-film-strip">
+      <span>35mm</span><span>·</span><span>ISO 400</span><span>·</span>
+      <span>f/2.8</span><span>·</span><span>1/125</span><span>·</span>
+      <span>35mm</span><span>·</span><span>ISO 400</span><span>·</span>
+      <span>f/2.8</span><span>·</span><span>1/125</span>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <!-- Replace with your featured landscape photo -->
+      <img src="../images/featured.jpg" alt="Featured" class="hero-img"
+           onerror="this.closest('.hero-photo-wrap').classList.add('hero-empty')" />
+      <div class="hero-vignette"></div>
+      <div class="hero-scratch"></div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-frame-num">001</div>
+      <div class="hero-title-wrap">
+        <p class="hero-roll">Roll №01 — Landscape</p>
+        <h1>FILMORA</h1>
+        <p class="hero-tagline"><em>Photographs that remember</em></p>
+      </div>
+      <a href="#gallery" class="hero-btn">View Roll ↓</a>
+    </div>
+  </section>
+
+  <!-- GALLERY — Film Roll Layout -->
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-header">
+      <div class="roll-label">
+        <span class="roll-num">ROLL 01</span>
+        <span class="roll-film">KODAK PORTRA 400</span>
+      </div>
+      <h2>The Archive</h2>
+    </div>
+
+    <!-- Row 1: wide strip -->
+    <div class="film-row">
+      <div class="sprocket-strip left">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+
+      <div class="frames-strip">
+        <figure class="frame frame-lg">
+          <div class="frame-inner"><img src="../images/photo-01.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">01</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-sm">
+          <div class="frame-inner"><img src="../images/photo-02.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">02</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-sm">
+          <div class="frame-inner"><img src="../images/photo-03.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">03</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-lg">
+          <div class="frame-inner"><img src="../images/photo-04.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">04</span> Untitled</figcaption>
+        </figure>
+      </div>
+
+      <div class="sprocket-strip right">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="film-row">
+      <div class="sprocket-strip left">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+
+      <div class="frames-strip">
+        <figure class="frame frame-sm">
+          <div class="frame-inner"><img src="../images/photo-05.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">05</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-xl">
+          <div class="frame-inner"><img src="../images/photo-06.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">06</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-sm">
+          <div class="frame-inner"><img src="../images/photo-07.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">07</span> Untitled</figcaption>
+        </figure>
+      </div>
+
+      <div class="sprocket-strip right">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="film-row">
+      <div class="sprocket-strip left">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+
+      <div class="frames-strip">
+        <figure class="frame frame-lg">
+          <div class="frame-inner"><img src="../images/photo-08.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">08</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-lg">
+          <div class="frame-inner"><img src="../images/photo-09.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">09</span> Untitled</figcaption>
+        </figure>
+        <figure class="frame frame-sm">
+          <div class="frame-inner"><img src="../images/photo-10.jpg" alt="" loading="lazy" /></div>
+          <figcaption><span class="f-num">10</span> Untitled</figcaption>
+        </figure>
+      </div>
+
+      <div class="sprocket-strip right">
+        <div class="hole"></div><div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div>
+      </div>
+    </div>
+
+    <!--
+      ADD MORE PHOTOS:
+      Copy a whole <div class="film-row">...</div> block,
+      update the src paths and frame numbers.
+    -->
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <div class="about-photo">
+        <div class="polaroid">
+          <img src="../images/portrait.jpg" alt="Photographer"
+               onerror="this.closest('.polaroid').classList.add('polaroid-empty')" />
+          <p class="polaroid-caption">The Photographer</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="roll-label-sm">ABOUT</p>
+        <h2>Behind the<br><em>camera</em></h2>
+        <p>
+          A lifelong observer of light, shadow, and the quiet drama of the natural world.
+          Decades spent chasing that fleeting moment when everything aligns — the light,
+          the land, the silence between shutter clicks.
+        </p>
+        <p>Available for fine-art prints and commissioned work.</p>
+        <div class="film-stats">
+          <div class="stat"><span class="stat-n">35mm</span><span class="stat-l">Format</span></div>
+          <div class="stat"><span class="stat-n">Film</span><span class="stat-l">Medium</span></div>
+          <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Frames shot</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-strip">
+      <span>FILMORA</span><span>·</span>
+      <span>© <span id="yr"></span></span><span>·</span>
+      <span>ALL RIGHTS RESERVED</span><span>·</span>
+      <span>35MM PHOTOGRAPHY</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', scrollY > 20);
+    }, {passive:true});
+    document.querySelectorAll('.nav-links a').forEach(a =>
+      a.addEventListener('click', () => document.body.classList.remove('nav-open'))
+    );
+  </script>
+</body>
+</html>
